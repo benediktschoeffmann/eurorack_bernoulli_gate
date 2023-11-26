@@ -14,7 +14,7 @@
 #define DEBOUNCE 50     // in ms
 
 bool pressed;
-uint8_t p, r;
+uint16_t p, r;
 
 void setup() {
   pressed = false;
@@ -34,8 +34,8 @@ void loop() {
     if (pressed == false) {
       pressed = true;
       p = analogRead(KNOB_PIN);
-      r = random(RESOLUTION);  
-      
+      r = random(RESOLUTION);
+
       if (r <= p) {
         digitalWrite(OUT_A_PIN, HIGH);
         digitalWrite(LED_A_PIN, HIGH);
@@ -47,7 +47,7 @@ void loop() {
       delay(DEBOUNCE);
     } else {
       // signal is continuing
-      // do nothing 
+      // do nothing
     }
   } else {
     pressed = false;
@@ -55,8 +55,8 @@ void loop() {
     digitalWrite(OUT_B_PIN, LOW);
     digitalWrite(LED_A_PIN, LOW);
     digitalWrite(LED_B_PIN, LOW);
-    
+
     delay(DEBOUNCE);
   }
-  
+
 }
