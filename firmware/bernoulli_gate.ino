@@ -1,3 +1,5 @@
+#include <EasyTransferI2C.h>
+
 #define KNOB_PIN  A0  // potentionmeter
 #define IN_AN_PIN A1  // trigger-in jack
 #define IN_PIN    2   // trigger-in button
